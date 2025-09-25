@@ -30,7 +30,7 @@ const Campinas = () => {
         <meta property="og:title" content="Desentupidora 24 Horas em Campinas | Atendimento Rápido" />
         <meta property="og:description" content="Desentupidora 24 horas em Campinas. Atendimento rápido, orçamento grátis e garantia de 3 meses." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://desentupimentocampinas.com.br/campinas" />
+        <link rel="canonical" href="https://desentupir.onrender.com/campinas" />
       </Helmet>
 
       <Header city={city} phone={phone} />
