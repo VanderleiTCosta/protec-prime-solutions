@@ -1,13 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone } from "lucide-react";
-
-const cities = [
-  { name: "Campinas", path: "/campinas", description: "Atendimento em toda região de Campinas" },
-  { name: "São Paulo", path: "/sao-paulo", description: "Cobertura completa na capital paulista" },
-  { name: "Vinhedo", path: "/vinhedo", description: "Serviços especializados em Vinhedo" },
-  { name: "Zona Leste", path: "/zona-leste", description: "Atendimento rápido na Zona Leste de SP" },
-];
+import { Phone } from "lucide-react";
+import Header from "@/components/Header";
 
 const Index = () => {
   const phone = "(11) 94010-3334";
@@ -26,7 +20,9 @@ const Index = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        {/* Header */}
+        <Header city="SP e Região" phone={phone} />
+        
+        {/* Hero */}
         <header className="gradient-hero text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-shadow-sm">
@@ -47,39 +43,6 @@ const Index = () => {
             </Button>
           </div>
         </header>
-
-        {/* Cidades */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              Escolha sua cidade
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {cities.map((city, index) => (
-                <div 
-                  key={index}
-                  className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth border-t-4 border-t-emergency"
-                >
-                  <div className="text-center">
-                    <div className="bg-emergency text-emergency-foreground w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <MapPin className="h-8 w-8" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 text-primary">
-                      {city.name}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {city.description}
-                    </p>
-                    <Button asChild className="w-full">
-                      <a href={city.path}>Ver Página</a>
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Footer */}
         <footer className="bg-primary text-primary-foreground py-8">
