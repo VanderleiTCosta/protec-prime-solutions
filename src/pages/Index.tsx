@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import Header from "@/components/Header";
+import ServicosComImagens from "@/components/ServicosComImagens";
 
 const Index = () => {
   const phone = "(11) 94010-3334";
@@ -88,75 +89,7 @@ const Index = () => {
         </section>
 
         {/* Serviços */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              Nossos Serviços
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth">
-                <h3 className="text-xl font-bold mb-3 text-emergency">Desentupimento de Pia</h3>
-                <p className="text-muted-foreground mb-4">Limpeza completa com equipamentos modernos</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Hidrojateamento</li>
-                  <li>• Sem quebra-quebra</li>
-                  <li>• Garantia de 3 meses</li>
-                </ul>
-              </div>
-              
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth">
-                <h3 className="text-xl font-bold mb-3 text-emergency">Desentupimento de Vaso</h3>
-                <p className="text-muted-foreground mb-4">Técnicas especializadas para vasos sanitários</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Equipamentos específicos</li>
-                  <li>• Limpeza profunda</li>
-                  <li>• Atendimento imediato</li>
-                </ul>
-              </div>
-              
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth">
-                <h3 className="text-xl font-bold mb-3 text-emergency">Desentupimento de Ralo</h3>
-                <p className="text-muted-foreground mb-4">Desobstrução eficiente de ralos e grelhas</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Remoção de detritos</li>
-                  <li>• Limpeza química</li>
-                  <li>• Prevenção de odores</li>
-                </ul>
-              </div>
-              
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth">
-                <h3 className="text-xl font-bold mb-3 text-emergency">Desentupimento de Esgoto</h3>
-                <p className="text-muted-foreground mb-4">Soluções para problemas de esgoto residencial</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Hidrojateamento de alta pressão</li>
-                  <li>• Análise da tubulação</li>
-                  <li>• Serviço profissional</li>
-                </ul>
-              </div>
-              
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth">
-                <h3 className="text-xl font-bold mb-3 text-emergency">Limpeza de Caixa de Gordura</h3>
-                <p className="text-muted-foreground mb-4">Manutenção preventiva e corretiva</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Remoção completa</li>
-                  <li>• Desinfecção</li>
-                  <li>• Orientações de uso</li>
-                </ul>
-              </div>
-              
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth">
-                <h3 className="text-xl font-bold mb-3 text-emergency">Hidrojateamento</h3>
-                <p className="text-muted-foreground mb-4">Tecnologia de ponta para desobstruções</p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Alta pressão controlada</li>
-                  <li>• Limpeza profunda</li>
-                  <li>• Sem danificar tubulações</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServicosComImagens />
 
         {/* Depoimentos */}
         <section className="py-16 bg-accent">

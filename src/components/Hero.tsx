@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Clock } from "lucide-react";
-import HeroImage from "@/assets/heroImage.png";
+import HeroImage from "@/assets/hero.jpg";
 
 interface HeroProps {
   city: string;

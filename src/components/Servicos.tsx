@@ -40,13 +40,13 @@ const Servicos = () => {
           {servicos.map((servico, index) => (
             <div 
               key={index}
-              className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-smooth border-l-4 border-l-emergency"
+              className="bg-card p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 border-primary"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-emergency text-emergency-foreground w-12 h-12 rounded-full flex items-center justify-center">
+                <div className="bg-primary/10 text-primary w-12 h-12 rounded-lg flex items-center justify-center">
                   <servico.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary">
+                <h3 className="text-xl font-semibold text-foreground">
                   {servico.title}
                 </h3>
               </div>
