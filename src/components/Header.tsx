@@ -23,20 +23,18 @@ const cities = [
 
 const Header = ({ city, phone }: HeaderProps) => {
   const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, '')}`;
-  
+
   return (
     <header className="bg-background border-b">
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <a href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
-              <img 
-                src="/logo.png" 
-                alt="Logo Desentupidora" 
-                className="h-12 w-auto"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
+              {/* Sua logo agora no cabeçalho */}
+              <img
+                src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdesentupidoraprotec.com.br%2F&psig=AOvVaw2gB8O6Z_4p9rX4f3Q_0n7K&ust=1708892408990000&source=images&cd=vfe&opi=89978757&ved=0CBMQjRxqFwoTCID425S7yIQDFQAAAAAdAAAAABAE"
+                alt="Logo Grupo Protec Desentupidora"
+                className="h-16 w-auto"
               />
               <div>
                 <h1 className="text-2xl md:text-3xl font-bold text-primary">
@@ -46,7 +44,7 @@ const Header = ({ city, phone }: HeaderProps) => {
               </div>
             </a>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <NavigationMenu>
               <NavigationMenuList>
@@ -72,8 +70,8 @@ const Header = ({ city, phone }: HeaderProps) => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            
-            <Button 
+
+            <Button
               asChild
               variant="default"
               size="lg"

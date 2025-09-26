@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Clock } from "lucide-react";
-import heroImage from "@/assets/desentupidora-veiculo.jpg";
+import HeroImage from "@/assets/heroImage.png";
 
 interface HeroProps {
   city: string;
@@ -10,7 +10,8 @@ interface HeroProps {
 
 const Hero = ({ city, phone, neighborhoods }: HeroProps) => {
   const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, '')}`;
-  
+  // A imagem do Hero será gerada para combinar com as cores da sua logo
+
   return (
     <section className="gradient-hero text-white py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -19,25 +20,25 @@ const Hero = ({ city, phone, neighborhoods }: HeroProps) => {
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-shadow-sm">
               Desentupidora em {city}
             </h1>
-            <h2 className="text-xl md:text-2xl mb-6 text-emergency-foreground/90">
+            <h2 className="text-xl md:text-2xl mb-6 text-primary-foreground/90">
               Atendimento rápido e eficiente!
             </h2>
-            
+
             <div className="flex items-center gap-2 mb-6">
-              <Clock className="h-5 w-5" />
+              <Clock className="h-5 w-5 text-accent" /> {/* Ícone da hora com cor de destaque */}
               <span className="text-lg">Chegamos em até 30 minutos</span>
             </div>
-            
+
             {neighborhoods && (
-              <p className="mb-6 text-emergency-foreground/90">
+              <p className="mb-6 text-primary-foreground/90">
                 Atendemos: {neighborhoods.join(", ")} e região
               </p>
             )}
-            
-            <Button 
+
+            <Button
               asChild
               size="lg"
-              className="bg-service hover:bg-service/90 text-service-foreground shadow-service text-lg px-8 py-6"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-service text-lg px-8 py-6" // Botão de destaque com cor de acento
             >
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <Phone className="mr-2 h-6 w-6" />
@@ -45,10 +46,10 @@ const Hero = ({ city, phone, neighborhoods }: HeroProps) => {
               </a>
             </Button>
           </div>
-          
+
           <div className="flex justify-center">
-            <img 
-              src={heroImage}
+            <img
+              src={HeroImage}
               alt={`Veículo da desentupidora em ${city}`}
               className="max-w-full h-auto rounded-lg shadow-2xl"
               loading="lazy"
