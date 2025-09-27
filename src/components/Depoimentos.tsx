@@ -1,30 +1,55 @@
 import { Star } from "lucide-react";
 
 interface DepoimentosProps {
-  city: string;
+  city?: string; // Cidade agora é opcional
 }
 
 const Depoimentos = ({ city }: DepoimentosProps) => {
-  const depoimentos = [
+  // Depoimentos padrão para a página inicial
+  const depoimentosPadrao = [
     {
       nome: "João Silva",
-      local: city,
+      local: "São Paulo",
       texto: "Resolvido em menos de 1 hora! Excelente atendimento e preço justo. Recomendo!",
       estrelas: 5
     },
     {
       nome: "Maria Santos",
-      local: city,
+      local: "Campinas",
       texto: "Equipe muito profissional. Chegaram rapidamente e resolveram o problema sem bagunça.",
       estrelas: 5
     },
     {
       nome: "Carlos Oliveira",
-      local: city,
+      local: "Vinhedo",
       texto: "Atendimento 24 horas funcionou perfeitamente. Problema resolvido de madrugada!",
       estrelas: 5
     }
   ];
+
+  // Depoimentos genéricos para páginas de cidade (pode personalizar mais se quiser)
+  const depoimentosCidade = [
+    {
+      nome: "Cliente Satisfeito",
+      local: city,
+      texto: `Serviço impecável em ${city}! Foram muito rápidos e eficientes. Recomendo a todos.`,
+      estrelas: 5
+    },
+    {
+      nome: "Morador Local",
+      local: city,
+      texto: "Finalmente uma empresa de confiança na nossa região. Preço justo e serviço com garantia.",
+      estrelas: 5
+    },
+    {
+      nome: "Comércio Local",
+      local: city,
+      texto: `Resolveram um grande problema de esgoto em nosso estabelecimento. Atendimento nota 10 em ${city}!`,
+      estrelas: 5
+    }
+  ];
+
+  const depoimentos = city ? depoimentosCidade : depoimentosPadrao;
   
   return (
     <section className="py-16 bg-muted">
@@ -37,7 +62,7 @@ const Depoimentos = ({ city }: DepoimentosProps) => {
           {depoimentos.map((depoimento, index) => (
             <div 
               key={index}
-              className="bg-card p-6 rounded-lg shadow-lg"
+              className="bg-card p-6 rounded-lg shadow-sm"
             >
               <div className="flex mb-4">
                 {[...Array(depoimento.estrelas)].map((_, i) => (
