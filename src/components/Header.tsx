@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,7 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import ProtecLogo from "@/assets/protec.jpeg"; // Importando a logo
+import ProtecLogo from "@/assets/protec.jpeg";
 
 interface HeaderProps {
   city: string;
@@ -16,6 +16,7 @@ interface HeaderProps {
 }
 
 const cities = [
+  { name: "Página Inicial", path: "/" },
   { name: "Campinas", path: "/campinas" },
   { name: "São Paulo", path: "/sao-paulo" },
   { name: "Vinhedo", path: "/vinhedo" },
@@ -26,24 +27,36 @@ const Header = ({ city, phone }: HeaderProps) => {
   const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, "")}`;
 
   return (
-    <header className="bg-card border-b shadow-sm sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-card shadow-md">
+      {/* Top Bar */}
+      <div className="bg-secondary text-secondary-foreground py-2 hidden md:block">
+        <div className="container mx-auto px-4 flex justify-between items-center text-xs sm:text-sm">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1.5">
+              <Mail className="h-4 w-4" />
+              <span>contato@protecdesentupidora.com.br</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <MapPin className="h-4 w-4" />
+            <span>Atendimento em toda SP e Região</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Header */}
       <div className="container mx-auto px-4 py-3">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-2">
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img
               src={ProtecLogo}
               alt="Logo Grupo Protec Desentupidora"
-              className="h-14 w-auto"
+              className="h-12 md:h-14 w-auto"
             />
-            <div>
-              <h1 className="text-xl md:text-2xl font-bold text-primary">
-                Desentupidora {city}
-              </h1>
-              <p className="text-sm text-muted-foreground">Atendimento 24 horas</p>
-            </div>
           </a>
-
-          <div className="flex items-center gap-3">
+          
+          <div className="flex items-center gap-2">
+            {/* Menu de Cidades - Adicionado de volta */}
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -52,7 +65,7 @@ const Header = ({ city, phone }: HeaderProps) => {
                     Cidades
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-48 gap-2 p-4">
+                    <div className="grid w-48 gap-1 p-2">
                       {cities.map((cityItem) => (
                         <NavigationMenuLink key={cityItem.name} asChild>
                           <a
@@ -69,15 +82,14 @@ const Header = ({ city, phone }: HeaderProps) => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            {/* Botão de contato unificado com a cor de sucesso (verde) */}
             <Button
               asChild
               size="lg"
-              className="bg-success hover:bg-success/90 text-success-foreground shadow-lg font-bold text-base"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg font-bold text-base hidden sm:inline-flex"
             >
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <Phone className="mr-2 h-5 w-5" />
-                {phone}
+                Orçamento Grátis
               </a>
             </Button>
           </div>
