@@ -1,9 +1,19 @@
 import { Button } from "./ui/button";
 import { FaWhatsapp } from "react-icons/fa";
 
-const TopBar = () => {
-    const phone = "(11) 95277-3471";
-    const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, "")}`;
+// 1. Definimos a interface para receber a propriedade
+interface TopBarProps {
+    whatsappNumber?: string; // Propriedade opcional para evitar erros
+}
+
+const TopBar = ({ whatsappNumber }: TopBarProps) => {
+    // 2. Adicionamos uma verificação para segurança
+    if (!whatsappNumber) {
+        return null; // Não renderiza nada se o número não for fornecido
+    }
+
+    // 3. Usamos a propriedade recebida para criar a URL
+    const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, "")}`;
 
     return (
         <div className="bg-primary text-primary-foreground py-2">

@@ -30,7 +30,7 @@ const Index = () => {
       </Helmet>
 
       <div className="bg-background">
-        <TopBar />
+        <TopBar whatsappNumber={whatsappNumber} />
         {/* ALTERAÇÃO 2: Passando o número de ligação para o Header */}
         <Header city="SP e Região" whatsappNumber={whatsappNumber} />
         <main>

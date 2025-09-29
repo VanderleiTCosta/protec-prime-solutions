@@ -39,7 +39,7 @@ const Header = ({ city, whatsappNumber }: HeaderProps) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
               <Mail className="h-4 w-4" />
-              <span>contato@protecdesentupidora.com.br</span>
+              <span>contato@desentupidora.com.br</span>
             </div>
           </div>
           <div className="flex items-center gap-1.5">

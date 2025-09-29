@@ -46,7 +46,7 @@ const PaginaCidade = () => {
       </Helmet>
 
       <div className="bg-background">
-        <TopBar />
+        <TopBar whatsappNumber={fullData.whatsappNumber} />
         <Header city={fullData.city} whatsappNumber={fullData.whatsappNumber} />
         <main>
           <Hero 
