@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, ShieldCheck, Clock, Award } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa"; // Importado de react-icons
-import HeroImage from "@/assets/heroImage.png";
+import HeroImage from "@/assets/heroImage.webp";
 
 interface HeroProps {
   phone: string;

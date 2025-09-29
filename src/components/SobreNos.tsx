@@ -1,5 +1,5 @@
 import { ShieldCheck, Users, Wrench } from 'lucide-react';
-import SobreImage from '@/assets/desentupidora-veiculo.png'; // Imagem de exemplo
+import SobreImage from '@/assets/heroImage.webp'; // Imagem de exemplo
 
 const SobreNos = () => {
   return (

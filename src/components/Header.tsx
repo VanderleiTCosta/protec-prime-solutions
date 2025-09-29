@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import ProtecLogo from "@/assets/protec.jpeg";
+import ProtecLogo from "@/assets/protec.webp";
 
 interface HeaderProps {
   city: string;

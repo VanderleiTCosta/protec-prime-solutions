@@ -2,14 +2,14 @@ import { ArrowRight, MessageCircle } from "lucide-react"; // Importe o MessageCi
 import { Button } from "./ui/button";
 
 // Importe as suas imagens
-import PiaImage from '@/assets/pia.png';
-import VasoImage from '@/assets/vaso.png';
-import RaloImage from '@/assets/ralo.png';
-import CaixaDeGorduraImage from '@/assets/caixadegordura.png';
-import EsgotoImage from '@/assets/esgoto.png';
-import CanoImage from '@/assets/cano.png';
-import FossaImage from '@/assets/fossa.png';
-import PragasImage from '@/assets/pragas.png';
+import PiaImage from '@/assets/pia.webp';
+import VasoImage from '@/assets/vaso.webp';
+import RaloImage from '@/assets/ralo.webp';
+import CaixaDeGorduraImage from '@/assets/caixadegordura.webp';
+import EsgotoImage from '@/assets/esgoto.webp';
+import CanoImage from '@/assets/cano.webp';
+import FossaImage from '@/assets/fossa.webp';
+import PragasImage from '@/assets/pragas.webp';
 
 const servicos = [
   {

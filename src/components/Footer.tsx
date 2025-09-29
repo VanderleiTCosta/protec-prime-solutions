@@ -1,4 +1,4 @@
-import ProtecLogo from "@/assets/protec.jpeg";
+import ProtecLogo from "@/assets/protec.webp";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
