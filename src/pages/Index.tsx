@@ -8,9 +8,11 @@ import Depoimentos from "@/components/Depoimentos";
 import Contato from "@/components/Contato";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import { cityData } from "@/data/cityData";
 
 const Index = () => {
-  const phone = "(11) 94010-3334";
+  const defaultCity = cityData["sao-paulo"];
+  const phone = defaultCity.phone;
 
   return (
     <>

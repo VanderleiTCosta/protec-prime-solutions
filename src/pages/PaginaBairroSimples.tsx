@@ -1,11 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { FaWhatsapp } from "react-icons/fa";
-import { SimpleLayoutData } from "@/data/cityData"; // Importa o tipo específico
-import { Star, ShieldCheck, Clock, Award, CheckCircle } from "lucide-react";
+import { SimpleLayoutData } from "@/data/cityData";
+import { Star, ShieldCheck, Clock, Award, CheckCircle, ArrowLeft } from "lucide-react";
+import TopBar from "@/components/TopBar";
+import { Link } from "react-router-dom";
 
 interface PaginaBairroProps {
-  data: SimpleLayoutData; // Usa o tipo específico aqui
+  data: SimpleLayoutData;
 }
 
 const PaginaBairroSimples = ({ data }: PaginaBairroProps) => {
@@ -30,12 +32,22 @@ const PaginaBairroSimples = ({ data }: PaginaBairroProps) => {
       </Helmet>
       
       <div className="bg-white min-h-screen">
+        <TopBar />
+        {/* Header Simples */}
         <header className="bg-blue-600 text-white shadow-md sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 className="text-xl md:text-2xl font-bold">
-              Desentupidora {data.city}
-            </h1>
-            <Button asChild className="bg-green-500 hover:bg-green-600 text-white font-bold">
+            <div className="flex items-center gap-3">
+              {/* Botão para voltar adicionado no topo */}
+              <Button asChild variant="outline" size="icon" className="bg-transparent text-white border-white/50 hover:bg-white/20 h-9 w-9">
+                <Link to="/" aria-label="Voltar para a Página Inicial">
+                  <ArrowLeft className="h-5 w-5" />
+                </Link>
+              </Button>
+              <h1 className="text-lg md:text-2xl font-bold">
+                Desentupidora {data.city}
+              </h1>
+            </div>
+            <Button asChild className="bg-green-500 hover:bg-green-600 text-white font-bold text-sm sm:text-base">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="mr-2 h-5 w-5" />
                 <span>{data.phone}</span>
@@ -44,6 +56,7 @@ const PaginaBairroSimples = ({ data }: PaginaBairroProps) => {
           </div>
         </header>
 
+        {/* Hero Section */}
         <main className="container mx-auto px-4 py-12 md:py-20 text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight">
             Desentupimento em {data.city} 24 Horas
@@ -67,6 +80,7 @@ const PaginaBairroSimples = ({ data }: PaginaBairroProps) => {
           </Button>
         </main>
 
+        {/* Seções de Conteúdo Adicional */}
         <section className="bg-gray-50 py-16">
           <div className="container mx-auto px-4 text-center">
             <h3 className="text-3xl font-bold text-gray-800 mb-10">Nossos Diferenciais em {data.city}</h3>
@@ -108,6 +122,7 @@ const PaginaBairroSimples = ({ data }: PaginaBairroProps) => {
             </div>
         </section>
         
+        {/* Footer Simples */}
         <footer className="bg-gray-100 border-t">
           <div className="container mx-auto px-4 py-6 text-center text-gray-600">
             <p>&copy; 2025 Desentupidora {data.city} | Atendimento 24 Horas</p>

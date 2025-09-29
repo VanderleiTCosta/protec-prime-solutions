@@ -14,8 +14,8 @@ const Hero = ({ city, phone, neighborhoods }: HeroProps) => {
 
   const title = city ? `Desentupidora 24 Horas em ${city}` : "Desentupidora 24 Horas em SP e Região";
   const subtitle = city 
-    ? `Atendemos: ${neighborhoods?.join(", ")} e toda a região.`
-    : "Soluções completas para residências, comércios e indústrias.";
+  ? `Atendemos: ${neighborhoods && neighborhoods.length > 0 ? neighborhoods.join(", ") : city} e toda a região.`
+  : "Soluções completas para residências, comércios e indústrias.";
 
   return (
     <section 
