@@ -5,7 +5,7 @@ import ImagemCampinas from '@/assets/desentupidora.webp';
 import ImagemVinhedo from '@/assets/desentupidora.webp';
 import ImagemZL from '@/assets/desentupidora.webp';
 
-// --- DEFINIÇÃO DOS TIPOS ---
+// --- DEFINIÇÃO DOS TIPOS ATUALIZADA ---
 interface SeoData {
   title: string;
   description: string;
@@ -13,11 +13,12 @@ interface SeoData {
   canonical: string;
 }
 
-// Tipo para o layout completo
+// O tipo 'phone' foi substituído por 'whatsappNumber' e 'callNumber'
 export interface FullLayoutData {
   layout: "full";
   city: string;
-  phone: string;
+  whatsappNumber: string; // Número para o WhatsApp
+  callNumber: string;     // Número para ligação (0800)
   neighborhoods: string[];
   seo: SeoData;
   about: {
@@ -29,29 +30,29 @@ export interface FullLayoutData {
   };
 }
 
-// Tipo para o layout simples
 export interface SimpleLayoutData {
   layout: "simple";
   city: string;
-  phone: string;
+  whatsappNumber: string;
+  callNumber: string;
   price: string;
   seo: SeoData;
   content: string;
 }
 
-// Tipo de união para todos os possíveis formatos de dados
 export type CityData = FullLayoutData | SimpleLayoutData;
 
-// --- DADOS DO SITE ---
+// --- DADOS DO SITE ATUALIZADOS ---
 export const cityData: Record<string, CityData> = {
   "sao-paulo": {
     layout: "full",
     city: "São Paulo",
-    phone: "(11) 95277-3471",
+    whatsappNumber: "(11) 94010-3334",
+    callNumber: "0800 591 9537",
     neighborhoods: ["Centro", "Vila Madalena", "Pinheiros", "Moema", "Ipanema", "Vila Olímpia", "Brooklin", "Itaim Bibi"],
     seo: {
       title: "Desentupidora 24 Horas em São Paulo | Atendimento Rápido",
-      description: "Desentupidora 24 horas em São Paulo. Atendimento rápido, orçamento grátis e garantia de 3 meses. Chegamos em até 30 minutos. Ligue: (11) 95277-3471",
+      description: "Desentupidora 24 horas em São Paulo. Atendimento rápido, orçamento grátis e garantia de 3 meses. Chegamos em até 30 minutos.",
       keywords: "desentupidora são paulo, desentupimento 24h sp, desentupidora moema, hidrojateamento são paulo",
       canonical: "https://seusite.com.br/sao-paulo"
     },
@@ -66,7 +67,8 @@ export const cityData: Record<string, CityData> = {
   "campinas": {
     layout: "full",
     city: "Campinas",
-    phone: "(11) 95277-3471",
+    whatsappNumber: "(19) 99714-3909",
+    callNumber: "0800 591 9537",
     neighborhoods: ["Centro", "Cambuí", "Taquaral", "Jardim Guanabara", "Vila Industrial", "Barão Geraldo"],
     seo: {
       title: "Desentupidora 24 Horas em Campinas | Atendimento Rápido",
@@ -85,7 +87,8 @@ export const cityData: Record<string, CityData> = {
    "vinhedo": {
     layout: "full",
     city: "Vinhedo",
-    phone: "(11) 95277-3471",
+    whatsappNumber: "(19) 99714-3909",
+    callNumber: "0800 591 9537",
     neighborhoods: ["Centro", "Vila João XXIII", "Pinheirinho", "Jardim Mirante", "Capela"],
     seo: {
       title: "Desentupidora 24 Horas em Vinhedo | Atendimento Rápido",
@@ -104,7 +107,8 @@ export const cityData: Record<string, CityData> = {
   "zona-leste": {
     layout: "full",
     city: "Zona Leste - SP",
-    phone: "(11) 95277-3471",
+    whatsappNumber: "(11) 94010-3334",
+    callNumber: "0800 591 9537",
     neighborhoods: ["Tatuapé", "Moóca", "Vila Prudente", "Penha", "Itaquera", "Vila Matilde", "Anália Franco"],
     seo: {
       title: "Desentupidora 24 Horas na Zona Leste SP | Atendimento Rápido",
@@ -120,43 +124,4 @@ export const cityData: Record<string, CityData> = {
       imageAlt: "Ponte Estaiada na Zona Leste de São Paulo"
     }
   },
-  "tatuape": {
-    layout: "simple",
-    city: "Tatuapé",
-    phone: "(11) 95277-3471",
-    price: "a partir de R$ 74,90",
-    seo: {
-      title: "Desentupidora no Tatuapé | Atendimento Rápido",
-      description: "Desentupidora no Tatuapé 24 horas. Atendimento rápido para pias, ralos, vasos e esgotos. Orçamento grátis. Cobrimos qualquer oferta!",
-      keywords: "desentupidora tatuapé, desentupimento tatuapé, desentupidora 24h tatuapé",
-      canonical: "https://seusite.com.br/tatuape"
-    },
-    content: "Nossos serviços de desentupimento no Tatuapé atendem a residências, comércios e indústrias. Com equipes locais, garantimos um atendimento rápido e eficiente para resolver problemas em pias, vasos sanitários, ralos e redes de esgoto. Oferecemos visita e orçamento sem compromisso, com a garantia do melhor preço da região."
-  },
-  "itaim-bibi": {
-    layout: "simple",
-    city: "Itaim Bibi",
-    phone: "(11) 95277-3471",
-    price: "a partir de R$ 74,90",
-    seo: {
-      title: "Desentupidora no Itaim Bibi | Orçamento Grátis",
-      description: "Desentupidora no Itaim Bibi com atendimento 24 horas. Equipes prontas para resolver entupimentos em geral. Preço justo e garantia. Ligue agora!",
-      keywords: "desentupidora itaim bibi, desentupimento itaim bibi, desentupidora 24h itaim bibi",
-      canonical: "https://seusite.com.br/itaim-bibi"
-    },
-    content: "Atuamos em todo o bairro do Itaim Bibi com soluções rápidas para qualquer tipo de entupimento. Nossos técnicos utilizam equipamentos modernos que resolvem o problema sem a necessidade de quebrar pisos ou paredes, garantindo um serviço limpo e eficaz. Atendimento imediato para bares, restaurantes, condomínios e residências."
-  },
-  "jundiai": {
-    layout: "simple",
-    city: "Jundiaí",
-    phone: "(11) 95277-3471",
-    price: "a partir de R$ 74,90",
-    seo: {
-      title: "Desentupidora em Jundiaí | Cobrimos Qualquer Oferta",
-      description: "Serviço de desentupidora em Jundiaí com atendimento 24 horas. Visita e orçamento grátis. Desentupimento de esgoto, ralo, pia e vaso com o melhor preço.",
-      keywords: "desentupidora jundiaí, desentupimento jundiaí, desentupidora 24h jundiaí",
-      canonical: "https://seusite.com.br/jundiai"
-    },
-    content: "Oferecemos em Jundiaí um serviço de desentupimento completo, com visita e orçamento gratuitos. Nossas equipes estão prontas para atender chamados emergenciais 24 horas por dia, 7 dias por semana. Cobrimos qualquer oferta da concorrência, mantendo a qualidade e a garantia que você precisa."
-  }
 };

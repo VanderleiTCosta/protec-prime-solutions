@@ -9,10 +9,13 @@ import Contato from "@/components/Contato";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import { cityData } from "@/data/cityData";
+import TopBar from "@/components/TopBar";
+import WhatsappFlutuante from "@/components/WhatsappFlutuante";
 
 const Index = () => {
   const defaultCity = cityData["sao-paulo"];
-  const phone = defaultCity.phone;
+  
+  const { whatsappNumber, callNumber } = defaultCity;
 
   return (
     <>
@@ -27,21 +30,28 @@ const Index = () => {
       </Helmet>
 
       <div className="bg-background">
-        <Header city="SP e Região" phone={phone} />
+        <TopBar />
+        {/* ALTERAÇÃO 2: Passando o número de ligação para o Header */}
+        <Header city="SP e Região" whatsappNumber={whatsappNumber} />
         <main>
-          {/* O Hero agora recebe a prop "city" conforme HeroProps */}
-          <Hero city="SP e Região" phone={phone} /> 
+          {/* ALTERAÇÃO 3: Passando as props corretas para o Hero */}
+          <Hero 
+            city="SP e Região" 
+            whatsappNumber={whatsappNumber} 
+            callNumber={callNumber} 
+          />
           
-          {/* Seções Adicionadas */}
           <Vantagens />
           <ServicosComImagens />
           <ComoFunciona />
-          <Depoimentos /> {/* Sem a prop "city", mostrará depoimentos gerais */}
-          <Contato phone={phone} />
+          <Depoimentos />
+          {/* ALTERAÇÃO 4: Passando o número de ligação para outros componentes */}
+          <Contato whatsappNumber={whatsappNumber} callNumber={callNumber} />
           
         </main>
-        <Footer city="SP e Região" />
-        <StructuredData city="SP e Região" phone={phone} />
+        <Footer whatsappNumber={whatsappNumber} callNumber={callNumber} />
+        <StructuredData city="SP e Região" phone={callNumber} />
+        <WhatsappFlutuante whatsappNumber={whatsappNumber} />
       </div>
     </>
   );

@@ -11,9 +11,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import ProtecLogo from "@/assets/protec.webp";
 
+// ALTERAÇÃO 1: A interface agora espera 'whatsappNumber' em vez de 'phone'
 interface HeaderProps {
   city: string;
-  phone: string;
+  whatsappNumber: string;
 }
 
 // Lista de links para o menu de Cidades
@@ -25,15 +26,10 @@ const cidadesLinks = [
   { name: "Zona Leste", path: "/zona-leste" },
 ];
 
-// Lista de links para o novo menu de Bairros
-const bairrosLinks = [
-  { name: "Jundiaí", path: "/jundiai" },
-  { name: "Tatuapé", path: "/tatuape" },
-  { name: "Itaim Bibi", path: "/itaim-bibi" },
-];
-
-const Header = ({ city, phone }: HeaderProps) => {
-  const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, "")}`;
+// ALTERAÇÃO 2: O componente agora recebe 'whatsappNumber' como prop
+const Header = ({ city, whatsappNumber }: HeaderProps) => {
+  // ALTERAÇÃO 3: A URL do WhatsApp é criada com o número correto
+  const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, "")}`;
 
   return (
     <header className="sticky top-0 z-50 bg-card shadow-md">
@@ -87,31 +83,10 @@ const Header = ({ city, phone }: HeaderProps) => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-
-                {/* Novo Menu de Bairros */}
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm">
-                    Bairros
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid w-48 gap-1 p-2">
-                      {bairrosLinks.map((link) => (
-                        <NavigationMenuLink key={link.name} asChild>
-                          <a
-                            href={link.path}
-                            className="block px-3 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
-                          >
-                            {link.name}
-                          </a>
-                        </NavigationMenuLink>
-                      ))}
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
               </NavigationMenuList>
             </NavigationMenu>
 
+            {/* O botão abaixo agora usa a 'whatsappUrl' correta */}
             <Button
               asChild
               size="lg"

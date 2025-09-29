@@ -1,16 +1,34 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, ShieldCheck, Clock, Award } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa"; // Importado de react-icons
+import { FaWhatsapp } from "react-icons/fa";
 import HeroImage from "@/assets/heroImage.webp";
 
+// Interface atualizada para receber os novos números
 interface HeroProps {
-  phone: string;
   city?: string;
   neighborhoods?: string[];
+  whatsappNumber: string; // Propriedade para o número do WhatsApp
+  callNumber: string;     // Propriedade para o número de ligação
 }
 
-const Hero = ({ city, phone, neighborhoods }: HeroProps) => {
-  const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, '')}`;
+const Hero = ({ city, neighborhoods, whatsappNumber, callNumber }: HeroProps) => {
+  // As URLs agora são geradas com os números recebidos via props
+  const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, '')}`;
+  const telUrl = `tel:${callNumber.replace(/\D/g, '')}`;
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobileCheck = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    setIsMobile(mobileCheck);
+  }, []);
+
+  const handleDesktopCallClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // O alerta agora exibe o número de ligação recebido via prop
+    alert(`Ligue grátis para: ${callNumber}`);
+  };
 
   const title = city ? `Desentupidora 24 Horas em ${city}` : "Desentupidora 24 Horas em SP e Região";
   const subtitle = city 
@@ -39,20 +57,23 @@ const Hero = ({ city, phone, neighborhoods }: HeroProps) => {
               className="bg-success hover:bg-success/90 text-success-foreground shadow-lg text-lg px-8 py-7 font-bold transform hover:scale-105 transition-transform"
             >
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                {/* Ícone do WhatsApp atualizado */}
                 <FaWhatsapp className="mr-2 h-6 w-6" />
                 Orçamento Grátis via WhatsApp
               </a>
             </Button>
+            
             <Button 
               asChild
               size="lg"
               variant="outline"
               className="text-black border-white hover:bg-white hover:text-primary text-lg px-8 py-7 font-bold"
             >
-              <a href={`tel:${phone.replace(/\D/g, '')}`}>
+              <a 
+                href={telUrl} 
+                onClick={!isMobile ? handleDesktopCallClick : undefined}
+              >
                 <Phone className="mr-2 h-5 w-5" />
-                Ligue Agora
+                Ligue grátis Agora!
               </a>
             </Button>
           </div>

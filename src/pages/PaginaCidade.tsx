@@ -1,7 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
-import { cityData, SimpleLayoutData, FullLayoutData } from "@/data/cityData";
+import { cityData, FullLayoutData } from "@/data/cityData";
 
-import PaginaBairroSimples from "./PaginaBairroSimples";
 
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
@@ -14,6 +13,8 @@ import Depoimentos from "@/components/Depoimentos";
 import Contato from "@/components/Contato";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import TopBar from "@/components/TopBar";
+import WhatsappFlutuante from "@/components/WhatsappFlutuante";
 
 type CityId = keyof typeof cityData;
 
@@ -29,11 +30,6 @@ const PaginaCidade = () => {
   }
 
   const data = cityData[cityId];
-
-  if (data.layout === 'simple') {
-    return <PaginaBairroSimples data={data as SimpleLayoutData} />;
-  }
-
   const fullData = data as FullLayoutData;
 
   return (
@@ -50,18 +46,26 @@ const PaginaCidade = () => {
       </Helmet>
 
       <div className="bg-background">
-        <Header city={fullData.city} phone={fullData.phone} />
+        <TopBar />
+        <Header city={fullData.city} whatsappNumber={fullData.whatsappNumber} />
         <main>
-          <Hero city={fullData.city} phone={fullData.phone} neighborhoods={fullData.neighborhoods} />
+          <Hero 
+            city={fullData.city} 
+            whatsappNumber={fullData.whatsappNumber}
+            callNumber={fullData.callNumber}
+            neighborhoods={fullData.neighborhoods} 
+          />
           <Vantagens />
           <ServicosComImagens />
           <SobreNos />
           <ComoFunciona />
           <Depoimentos city={fullData.city} />
-          <Contato phone={fullData.phone} />
+          
+          <Contato whatsappNumber={fullData.whatsappNumber} callNumber={fullData.callNumber} />
         </main>
-        <Footer city={fullData.city} />
-        <StructuredData city={fullData.city} phone={fullData.phone} neighborhoods={fullData.neighborhoods} />
+        <Footer whatsappNumber={fullData.whatsappNumber} callNumber={fullData.callNumber} />
+        <StructuredData city={fullData.city} phone={fullData.callNumber} neighborhoods={fullData.neighborhoods} />
+        <WhatsappFlutuante whatsappNumber={fullData.whatsappNumber} />
       </div>
     </>
   );

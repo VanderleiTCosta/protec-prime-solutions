@@ -1,16 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Clock } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa"; // Importado de react-icons
+import { FaWhatsapp } from "react-icons/fa";
 
+// ALTERAÇÃO 1: A interface agora espera os dois números
 interface ContatoProps {
-  phone: string;
+  whatsappNumber: string;
+  callNumber: string;
 }
 
-const Contato = ({ phone }: ContatoProps) => {
-  const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, '')}`;
+// ALTERAÇÃO 2: O componente recebe as duas props
+const Contato = ({ whatsappNumber, callNumber }: ContatoProps) => {
+  // A URL do WhatsApp usa o 'whatsappNumber'
+  const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, '')}`;
   
   return (
-    <section className="py-16 bg-card">
+    <section id="contato" className="py-16 bg-card">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">
           Entre em Contato Agora
@@ -26,19 +30,20 @@ const Contato = ({ phone }: ContatoProps) => {
             <span className="text-lg font-semibold text-foreground">Atendimento 24 Horas</span>
           </div>
           
+          {/* ALTERAÇÃO 3: O número de ligação (0800) é exibido e usado no link 'tel:' */}
           <div className="text-3xl font-bold text-primary mb-6">
-            <a href={`tel:${phone.replace(/\D/g, '')}`} className="hover:opacity-80 transition-opacity">
-              {phone}
+            <a href={`tel:${callNumber.replace(/\D/g, '')}`} className="hover:opacity-80 transition-opacity">
+              {callNumber}
             </a>
           </div>
           
+          {/* O botão de WhatsApp agora usa a URL correta */}
           <Button 
             asChild
             size="lg"
             className="w-full bg-success hover:bg-success/90 text-success-foreground text-lg py-6 font-bold"
           >
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              {/* Ícone do WhatsApp atualizado */}
               <FaWhatsapp className="mr-2 h-6 w-6" />
               Chamar no WhatsApp
             </a>
@@ -56,7 +61,6 @@ const Contato = ({ phone }: ContatoProps) => {
           
           <div className="text-center">
             <div className="bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-              {/* Ícone do WhatsApp atualizado */}
               <FaWhatsapp className="h-8 w-8" />
             </div>
             <h3 className="font-semibold text-lg mb-2 text-foreground">WhatsApp</h3>
