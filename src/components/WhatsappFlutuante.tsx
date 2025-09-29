@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"; // Importado de react-icons
 import { Button } from "./ui/button";
 
 const WhatsappFlutuante = () => {
@@ -18,7 +18,8 @@ const WhatsappFlutuante = () => {
         className="bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 shadow-lg transform hover:scale-110 transition-transform duration-200"
         aria-label="Chamar no WhatsApp"
       >
-        <MessageCircle className="w-8 h-8" />
+        {/* Ícone do WhatsApp atualizado */}
+        <FaWhatsapp className="w-8 h-8" />
       </Button>
     </a>
   );

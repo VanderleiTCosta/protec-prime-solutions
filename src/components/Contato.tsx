@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle, Clock } from "lucide-react";
+import { Phone, Clock } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"; // Importado de react-icons
 
 interface ContatoProps {
   phone: string;
 }
 
 const Contato = ({ phone }: ContatoProps) => {
-  const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, "")}`;
+  const whatsappUrl = `https://wa.me/55${phone.replace(/\D/g, '')}`;
   
   return (
     <section className="py-16 bg-card">
@@ -37,7 +38,8 @@ const Contato = ({ phone }: ContatoProps) => {
             className="w-full bg-success hover:bg-success/90 text-success-foreground text-lg py-6 font-bold"
           >
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="mr-2 h-6 w-6" />
+              {/* Ícone do WhatsApp atualizado */}
+              <FaWhatsapp className="mr-2 h-6 w-6" />
               Chamar no WhatsApp
             </a>
           </Button>
@@ -54,7 +56,8 @@ const Contato = ({ phone }: ContatoProps) => {
           
           <div className="text-center">
             <div className="bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-              <MessageCircle className="h-8 w-8" />
+              {/* Ícone do WhatsApp atualizado */}
+              <FaWhatsapp className="h-8 w-8" />
             </div>
             <h3 className="font-semibold text-lg mb-2 text-foreground">WhatsApp</h3>
             <p className="text-sm text-muted-foreground">Mais prático e rápido</p>

@@ -2,57 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Desentupidora Design System - Cores Laranja, Amarelo e Preto da Sua Logo "Grupo Protec" */
+/*
+  Novo Design System
+  - Cor Dominante: Vermelho
+  - Cor Secundária: Amarelo
+*/
 
 @layer base {
   :root {
     /* Cores base */
-    --background: 0 0% 98%; /* Fundo levemente cinza */
-    --foreground: 0 0% 15%;  /* Texto escuro */
-
+    --background: 0 0% 98%;
+    /* Fundo levemente cinza */
+    --foreground: 0 0% 15%;
+    /* Texto escuro */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 15%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    /* Laranja principal da marca (da sua logo) */
-    --primary: 30 100% 50%; /* Laranja vibrante */
-    --primary-foreground: 0 0% 100%; /* Texto branco para contraste */
+    /* Cor Primária (Vermelho Dominante) */
+    --primary: 0 85% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Cinza escuro/Preto da marca (da sua logo) */
-    --secondary: 0 0% 15%; /* Quase preto */
-    --secondary-foreground: 0 0% 98%; /* Texto quase branco */
+    /* Cor Secundária (Amarelo) */
+    --secondary: 48 100% 50%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 0 0% 96%; /* Cinza claro para elementos secundários */
-    --muted-foreground: 0 0% 45%; /* Texto cinza médio */
+    /* Cores de apoio */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 40 100% 60%; /* Amarelo da sua logo para acentos */
-    --accent-foreground: 0 0% 15%; /* Texto escuro no amarelo */
+    /* Cor de Destaque (Amarelo, para consistência) */
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 15%;
 
-    --destructive: 0 84.2% 60.2%; /* Vermelho para ações destrutivas (pode ser mantido ou ajustado) */
+    /* Cores do sistema */
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 90%; /* Borda cinza clara */
+    --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 30 100% 50%; /* Laranja para foco */
+    --ring: 48 100% 50%;
+    /* Amarelo para anéis de foco */
 
     --radius: 0.5rem;
 
-    /* Cores customizadas para desentupidora */
-    --emergency: 0 85% 50%; /* Vermelho de emergência (mantido, pois é padrão para urgência) */
+    /* Cores customizadas mantidas */
+    --emergency: 0 85% 50%;
     --emergency-foreground: 0 0% 100%;
-
-    --service: 48 100% 50%; /* Amarelo vivo (pode ser usado para botões de serviço) */
+    --service: 48 100% 50%;
     --service-foreground: 0 0% 15%;
-
-    --success: 142.1 76.2% 36.3%; /* Verde para sucesso */
+    --success: 142.1 76.2% 36.3%;
+    /* Verde mantido para WhatsApp */
     --success-foreground: 0 0% 100%;
 
-    /* Gradientes da marca (inspirados na sua logo) */
-    --gradient-primary: linear-gradient(135deg, hsl(30, 100%, 50%), hsl(40, 100%, 60%)); /* Laranja para amarelo */
-    --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 15%), hsl(0, 0%, 5%)); /* Tons de preto/cinza */
-    --gradient-hero: linear-gradient(135deg, hsl(30, 100%, 50%) 0%, hsl(40, 100%, 60%) 100%); /* Gradiente hero com cores da logo */
+    /* Gradientes da marca (Vermelho e Amarelo) */
+    --gradient-primary: linear-gradient(135deg, hsl(0, 85%, 50%), hsl(48, 100%, 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 15%), hsl(0, 0%, 5%));
+    --gradient-hero: linear-gradient(135deg, hsl(0, 85%, 50%) 0%, hsl(48, 100%, 50%) 100%);
 
     /* Sombras */
     --shadow-emergency: 0 10px 30px -10px hsl(0 85% 50% / 0.3);
@@ -60,54 +66,31 @@
 
     /* Transições */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 15%;
-    --sidebar-primary: 30 100% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 100% 60%;
-    --sidebar-accent-foreground: 0 0% 15%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 30 100% 50%;
   }
 
-  /* Modo escuro (ajustado para as novas cores) */
   .dark {
-    --background: 0 0% 10%; /* Fundo escuro */
-    --foreground: 0 0% 98%; /* Texto claro */
-
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
     --card: 0 0% 10%;
     --card-foreground: 0 0% 98%;
-
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-
-    --primary: 40 100% 60%; /* Amarelo no modo escuro como primário */
-    --primary-foreground: 0 0% 10%;
-
-    --secondary: 0 0% 25%; /* Cinza escuro */
-    --secondary-foreground: 0 0% 98%;
-
+    --primary: 0 75% 55%;
+    /* Vermelho no modo escuro */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 90% 55%;
+    /* Amarelo no modo escuro */
+    --secondary-foreground: 0 0% 10%;
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 65%;
-
-    --accent: 30 100% 50%; /* Laranja para acentos no modo escuro */
-    --accent-foreground: 0 0% 98%;
-
+    --accent: 48 90% 55%;
+    /* Amarelo para acentos */
+    --accent-foreground: 0 0% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 40 100% 60%;
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 40 100% 60%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 30 100% 50%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 25%;
-    --sidebar-ring: 40 100% 60%;
+    --ring: 48 90% 55%;
   }
 }
 

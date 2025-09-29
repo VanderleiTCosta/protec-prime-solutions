@@ -1,42 +1,56 @@
-import { ArrowRight } from "lucide-react";
-import Pia from "@/assets/pia.png";
-import Vaso from "@/assets/vaso.png";
-import Ralo from "@/assets/ralo.png";
-import CaixaGordura from "@/assets/caixadegordura.png";
-import Hidrojateamento from "@/assets/encanador.png";
-import Esgoto from "@/assets/esgoto.png";
+import { ArrowRight, MessageCircle } from "lucide-react"; // Importe o MessageCircle
+import { Button } from "./ui/button";
 
-// Imagens placeholder - substitua pelas suas imagens de serviço
+// Importe as suas imagens
+import PiaImage from '@/assets/pia.png';
+import VasoImage from '@/assets/vaso.png';
+import RaloImage from '@/assets/ralo.png';
+import CaixaDeGorduraImage from '@/assets/caixadegordura.png';
+import EsgotoImage from '@/assets/esgoto.png';
+import CanoImage from '@/assets/cano.png';
+import FossaImage from '@/assets/fossa.png';
+import PragasImage from '@/assets/pragas.png';
+
 const servicos = [
   {
-    imagem: Pia,
+    imagem: PiaImage,
     titulo: "Desentupimento de Pia",
     descricao: "Soluções rápidas para pias de cozinha e banheiro.",
   },
   {
-    imagem: Vaso,
+    imagem: VasoImage,
     titulo: "Desentupimento de Vaso",
     descricao: "Desobstrução de vasos sanitários sem danos.",
   },
   {
-    imagem: Ralo,
+    imagem: RaloImage,
     titulo: "Desentupimento de Ralo",
     descricao: "Limpeza completa de ralos de chuveiro e pátio.",
   },
   {
-    imagem: CaixaGordura,
+    imagem: CaixaDeGorduraImage,
     titulo: "Limpeza de Caixa de Gordura",
     descricao: "Manutenção essencial para cozinhas e restaurantes.",
   },
   {
-    imagem: Hidrojateamento,
+    imagem: EsgotoImage,
     titulo: "Hidrojateamento",
     descricao: "Limpeza profunda com jatos de alta pressão.",
   },
   {
-    imagem: Esgoto,
+    imagem: CanoImage,
     titulo: "Desentupimento de Esgoto",
     descricao: "Soluções completas para redes de esgoto.",
+  },
+  {
+    imagem: FossaImage,
+    titulo: "Limpeza de Fossa",
+    descricao: "Esgotamento e limpeza de fossas sépticas.",
+  },
+  {
+    imagem: PragasImage,
+    titulo: "Controle de Pragas",
+    descricao: "Dedetização, desratização e descupinização.",
   },
 ];
 
@@ -46,14 +60,14 @@ const ServicosComImagens = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">
-            Soluções Completas de Desentupimento
+            Soluções Completas para Você
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Oferecemos todos os tipos de desentupimento com equipamentos modernos, técnicos especializados e garantia total dos serviços.
+            Oferecemos uma gama completa de serviços com equipamentos modernos, técnicos especializados e garantia total.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {servicos.map((servico, index) => (
             <div 
               key={index}
@@ -71,15 +85,22 @@ const ServicosComImagens = () => {
                 <h3 className="text-xl font-semibold text-foreground mb-2">
                   {servico.titulo}
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-4 text-sm">
                   {servico.descricao}
                 </p>
-                <a href={`https://wa.me/5511940103334`} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold inline-flex items-center group-hover:underline">
-                  Solicitar Orçamento <ArrowRight className="ml-1 h-4 w-4" />
+                <a href={`https://wa.me/5511940103334`} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold inline-flex items-center group-hover:underline text-sm">
+                  {/* Ícone do WhatsApp adicionado */}
+                  <MessageCircle className="mr-1.5 h-4 w-4" />
+                  Solicitar Orçamento
                 </a>
               </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-12">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold">
+                Ver Todos os Serviços
+            </Button>
         </div>
       </div>
     </section>

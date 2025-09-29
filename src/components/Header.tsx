@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,12 +16,20 @@ interface HeaderProps {
   phone: string;
 }
 
-const cities = [
+// Lista de links para o menu de Cidades
+const cidadesLinks = [
   { name: "Página Inicial", path: "/" },
   { name: "Campinas", path: "/campinas" },
   { name: "São Paulo", path: "/sao-paulo" },
   { name: "Vinhedo", path: "/vinhedo" },
   { name: "Zona Leste", path: "/zona-leste" },
+];
+
+// Lista de links para o novo menu de Bairros
+const bairrosLinks = [
+  { name: "Jundiaí", path: "/jundiai" },
+  { name: "Tatuapé", path: "/tatuape" },
+  { name: "Itaim Bibi", path: "/itaim-bibi" },
 ];
 
 const Header = ({ city, phone }: HeaderProps) => {
@@ -55,30 +64,51 @@ const Header = ({ city, phone }: HeaderProps) => {
             />
           </a>
           
-          <div className="flex items-center gap-2">
-            {/* Menu de Cidades - Adicionado de volta */}
+          <div className="flex items-center gap-1">
             <NavigationMenu>
               <NavigationMenuList>
+                {/* Menu de Cidades */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-sm">
-                    <MapPin className="mr-1.5 h-4 w-4" />
                     Cidades
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-48 gap-1 p-2">
-                      {cities.map((cityItem) => (
-                        <NavigationMenuLink key={cityItem.name} asChild>
+                      {cidadesLinks.map((link) => (
+                        <NavigationMenuLink key={link.name} asChild>
                           <a
-                            href={cityItem.path}
+                            href={link.path}
                             className="block px-3 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
                           >
-                            {cityItem.name}
+                            {link.name}
                           </a>
                         </NavigationMenuLink>
                       ))}
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
+                {/* Novo Menu de Bairros */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-sm">
+                    Bairros
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid w-48 gap-1 p-2">
+                      {bairrosLinks.map((link) => (
+                        <NavigationMenuLink key={link.name} asChild>
+                          <a
+                            href={link.path}
+                            className="block px-3 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                          >
+                            {link.name}
+                          </a>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
               </NavigationMenuList>
             </NavigationMenu>
 
@@ -88,7 +118,7 @@ const Header = ({ city, phone }: HeaderProps) => {
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg font-bold text-base hidden sm:inline-flex"
             >
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <Phone className="mr-2 h-5 w-5" />
+                <FaWhatsapp className="mr-2 h-5 w-5" />
                 Orçamento Grátis
               </a>
             </Button>
