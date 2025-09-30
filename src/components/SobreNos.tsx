@@ -1,25 +1,48 @@
+import { useParams } from 'react-router-dom';
+import { cityData, FullLayoutData } from '@/data/cityData';
 import { ShieldCheck, Users, Wrench } from 'lucide-react';
-import SobreImage from '@/assets/heroImage.webp'; // Imagem de exemplo
 
 const SobreNos = () => {
+  // Pega o ID da cidade pela URL (ex: "sao-paulo")
+  const { cityId } = useParams<{ cityId: string }>();
+
+  // Validação para garantir que cityId existe
+  if (!cityId || !(cityId in cityData)) {
+    // Pode retornar um componente de erro ou null se preferir
+    return null;
+  }
+  
+  const data = cityData[cityId] as FullLayoutData;
+
+  // Se não houver dados 'about' para a cidade, não renderiza nada
+  if (!data.about) {
+    return null;
+  }
+
+  // Puxa os dados dinâmicos da seção "about"
+  const { title, text1, text2, imageUrl, imageAlt } = data.about;
+
   return (
-    <section className="py-16 bg-card">
+    <section id="sobre-nos" className="py-16 bg-card">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img
-              src={SobreImage}
-              alt="Equipe da Protec Desentupidora"
+              src={imageUrl}  // <-- CORRIGIDO: Usa a imagem dinâmica
+              alt={imageAlt}    // <-- CORRIGIDO: Usa o alt dinâmico
               className="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-              Sua Desentupidora de Confiança
+              {title} {/* <-- CORRIGIDO: Usa o título dinâmico */}
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Com mais de uma década de experiência, o Grupo Protec se consolidou como referência em soluções de desentupimento em São Paulo e região. Nossa missão é oferecer um serviço rápido, limpo e com garantia, restabelecendo o bem-estar e a tranquilidade em sua casa ou empresa.
+              {text1} {/* <-- CORRIGIDO: Usa o texto 1 dinâmico */}
+            </p>
+            <p className="text-muted-foreground mb-6">
+              {text2} {/* <-- CORRIGIDO: Usa o texto 2 dinâmico */}
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
