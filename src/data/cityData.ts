@@ -1,9 +1,9 @@
 // src/data/cityData.ts
 
-import ImagemSP from '@/assets/detetizador.webp';
-import ImagemCampinas from '@/assets/desentupidora.webp';
-import ImagemVinhedo from '@/assets/desentupidora.webp';
-import ImagemZL from '@/assets/desentupidora.webp';
+import ImagemSP from '@/assets/esgoto.webp';
+import ImagemCampinas from '@/assets/esgoto.webp';
+import ImagemVinhedo from '@/assets/esgoto.webp';
+import ImagemZL from '@/assets/esgoto.webp';
 
 // --- DEFINIÇÃO DOS TIPOS ATUALIZADA ---
 interface SeoData {
