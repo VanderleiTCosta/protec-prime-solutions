@@ -1,5 +1,3 @@
-// src/components/ServicosDetalhes.tsx
-
 import React from 'react';
 
 const ServicosDetalhes = () => {

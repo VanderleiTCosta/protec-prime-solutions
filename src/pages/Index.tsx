@@ -31,10 +31,10 @@ const Index = () => {
 
       <div className="bg-background">
         <TopBar whatsappNumber={whatsappNumber} />
-        {/* ALTERAÇÃO 2: Passando o número de ligação para o Header */}
+        
         <Header city="SP e Região" whatsappNumber={whatsappNumber} />
         <main>
-          {/* ALTERAÇÃO 3: Passando as props corretas para o Hero */}
+          
           <Hero 
             city="SP e Região" 
             whatsappNumber={whatsappNumber} 
@@ -45,7 +45,6 @@ const Index = () => {
           <ServicosComImagens />
           <ComoFunciona />
           <Depoimentos />
-          {/* ALTERAÇÃO 4: Passando o número de ligação para outros componentes */}
           <Contato whatsappNumber={whatsappNumber} callNumber={callNumber} />
           
         </main>

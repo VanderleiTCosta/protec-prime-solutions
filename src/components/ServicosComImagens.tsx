@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle } from "lucide-react"; // Importe o MessageCircle
+import { ArrowRight, MessageCircle } from "lucide-react"; 
 import { Button } from "./ui/button";
 
 // Importe as suas imagens

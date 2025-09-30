@@ -2,7 +2,7 @@ import ProtecLogo from "@/assets/protec.webp";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-// ALTERAÇÃO 1: A interface agora espera os números dinâmicos
+
 interface FooterProps {
   whatsappNumber: string;
   callNumber: string;
@@ -27,7 +27,7 @@ const services = [
   "Controle de Pragas",
 ];
 
-// ALTERAÇÃO 2: O componente recebe as props e não tem mais número fixo
+
 const Footer = ({ whatsappNumber, callNumber, year = 2025 }: FooterProps) => {
   const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, "")}`;
 
@@ -71,7 +71,7 @@ const Footer = ({ whatsappNumber, callNumber, year = 2025 }: FooterProps) => {
             </ul>
           </div>
           
-          {/* ALTERAÇÃO 3: A seção de contato agora usa as props */}
+          
           <div>
             <h3 className="font-bold text-lg mb-4 text-white">Contato 24 Horas</h3>
             <ul className="space-y-3">

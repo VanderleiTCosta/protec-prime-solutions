@@ -28,21 +28,21 @@ const SobreNos = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="rounded-lg overflow-hidden shadow-lg">
             <img
-              src={imageUrl}  // <-- CORRIGIDO: Usa a imagem dinâmica
-              alt={imageAlt}    // <-- CORRIGIDO: Usa o alt dinâmico
+              src={imageUrl}  
+              alt={imageAlt}   
               className="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-              {title} {/* <-- CORRIGIDO: Usa o título dinâmico */}
+              {title}
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              {text1} {/* <-- CORRIGIDO: Usa o texto 1 dinâmico */}
+              {text1}
             </p>
             <p className="text-muted-foreground mb-6">
-              {text2} {/* <-- CORRIGIDO: Usa o texto 2 dinâmico */}
+              {text2}
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-4">

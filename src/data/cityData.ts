@@ -1,5 +1,3 @@
-// src/data/cityData.ts
-
 import ImagemSP from '@/assets/esgoto.webp';
 import ImagemCampinas from '@/assets/esgoto.webp';
 import ImagemVinhedo from '@/assets/esgoto.webp';

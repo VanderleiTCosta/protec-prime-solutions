@@ -1,18 +1,17 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "./ui/button";
 
-// Define the properties the component will receive
+
 interface WhatsappFlutuanteProps {
-  whatsappNumber?: string; // The '?' makes the prop optional to prevent errors
+  whatsappNumber?: string;
 }
 
 const WhatsappFlutuante = ({ whatsappNumber }: WhatsappFlutuanteProps) => {
-  // If no number is provided, don't render the button
+  
   if (!whatsappNumber) {
     return null;
   }
 
-  // Use the received prop to build the URL
   const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, '')}`;
   const message = "Olá! Gostaria de solicitar um orçamento.";
 

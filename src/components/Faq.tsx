@@ -1,5 +1,3 @@
-// src/components/Faq.tsx
-
 import {
   Accordion,
   AccordionContent,

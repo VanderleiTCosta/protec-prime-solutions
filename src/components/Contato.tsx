@@ -37,7 +37,7 @@ const Contato = ({ whatsappNumber, callNumber }: ContatoProps) => {
             </a>
           </div>
           
-          {/* O botão de WhatsApp agora usa a URL correta */}
+          
           <Button 
             asChild
             size="lg"

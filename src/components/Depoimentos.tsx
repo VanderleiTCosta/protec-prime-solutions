@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 
 interface DepoimentosProps {
-  city?: string; // Cidade agora é opcional
+  city?: string;
 }
 
 const Depoimentos = ({ city }: DepoimentosProps) => {

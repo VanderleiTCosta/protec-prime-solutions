@@ -9,7 +9,7 @@ import WhatsappFlutuante from "./components/WhatsappFlutuante";
 
 // Páginas
 import Index from "./pages/Index";
-import PaginaCidade from "./pages/PaginaCidade"; // Nova página dinâmica
+import PaginaCidade from "./pages/PaginaCidade";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

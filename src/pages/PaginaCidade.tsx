@@ -68,7 +68,8 @@ const PaginaCidade = () => {
           <Contato whatsappNumber={fullData.whatsappNumber} callNumber={fullData.callNumber} />
         </main>
         <Footer whatsappNumber={fullData.whatsappNumber} callNumber={fullData.callNumber} />
-        <StructuredData city={fullData.city} phone={fullData.callNumber} neighborhoods={fullData.neighborhoods} />
+        <StructuredData city={fullData.city} phone={fullData.callNumber} neighborhoods={fullData.neighborhoods}
+        canonicalUrl={fullData.seo.canonical} />
         <WhatsappFlutuante whatsappNumber={fullData.whatsappNumber} />
       </div>
     </>

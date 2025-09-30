@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import ProtecLogo from "@/assets/protec.webp";
 
-// ALTERAÇÃO 1: A interface agora espera 'whatsappNumber' em vez de 'phone'
+
 interface HeaderProps {
   city: string;
   whatsappNumber: string;
@@ -26,9 +26,9 @@ const cidadesLinks = [
   { name: "Zona Leste", path: "/zona-leste" },
 ];
 
-// ALTERAÇÃO 2: O componente agora recebe 'whatsappNumber' como prop
+
 const Header = ({ city, whatsappNumber }: HeaderProps) => {
-  // ALTERAÇÃO 3: A URL do WhatsApp é criada com o número correto
+  
   const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, "")}`;
 
   return (
@@ -86,7 +86,7 @@ const Header = ({ city, whatsappNumber }: HeaderProps) => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            {/* O botão abaixo agora usa a 'whatsappUrl' correta */}
+            
             <Button
               asChild
               size="lg"

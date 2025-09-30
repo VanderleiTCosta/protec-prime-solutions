@@ -26,7 +26,7 @@ const Hero = ({ city, neighborhoods, whatsappNumber, callNumber }: HeroProps) =>
 
   const handleDesktopCallClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // O alerta agora exibe o número de ligação recebido via prop
+    // O alerta exibe o número de ligação
     alert(`Ligue grátis para: ${callNumber}`);
   };
 
