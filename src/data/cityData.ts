@@ -13,7 +13,7 @@ interface SeoData {
   canonical: string;
 }
 
-// O tipo 'phone' foi substituído por 'whatsappNumber' e 'callNumber'
+
 export interface FullLayoutData {
   layout: "full";
   city: string;

@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Phone, Clock } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-// ALTERAÇÃO 1: A interface agora espera os dois números
+
 interface ContatoProps {
   whatsappNumber: string;
   callNumber: string;
 }
 
-// ALTERAÇÃO 2: O componente recebe as duas props
+
 const Contato = ({ whatsappNumber, callNumber }: ContatoProps) => {
   // A URL do WhatsApp usa o 'whatsappNumber'
   const whatsappUrl = `https://wa.me/55${whatsappNumber.replace(/\D/g, '')}`;
@@ -30,7 +30,7 @@ const Contato = ({ whatsappNumber, callNumber }: ContatoProps) => {
             <span className="text-lg font-semibold text-foreground">Atendimento 24 Horas</span>
           </div>
           
-          {/* ALTERAÇÃO 3: O número de ligação (0800) é exibido e usado no link 'tel:' */}
+          
           <div className="text-3xl font-bold text-primary mb-6">
             <a href={`tel:${callNumber.replace(/\D/g, '')}`} className="hover:opacity-80 transition-opacity">
               {callNumber}

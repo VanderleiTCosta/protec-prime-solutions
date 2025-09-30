@@ -15,6 +15,7 @@ import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import TopBar from "@/components/TopBar";
 import WhatsappFlutuante from "@/components/WhatsappFlutuante";
+import ServicosDetalhes from "@/components/ServicosDetalhes";
 
 type CityId = keyof typeof cityData;
 
@@ -57,6 +58,7 @@ const PaginaCidade = () => {
           />
           <Vantagens />
           <ServicosComImagens />
+          <ServicosDetalhes />
           <SobreNos />
           <ComoFunciona />
           <Depoimentos city={fullData.city} />
