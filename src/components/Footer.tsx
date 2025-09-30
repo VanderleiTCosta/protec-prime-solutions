@@ -89,7 +89,7 @@ const Footer = ({ whatsappNumber, callNumber, year = 2025 }: FooterProps) => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-primary" />
-                <span className="text-sm text-secondary-foreground/80">contato@protec.com.br</span>
+                <span className="text-sm text-secondary-foreground/80">contato@desentupidora.com.br</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-primary" />
